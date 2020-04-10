@@ -26,15 +26,15 @@ public class Test1 {
             scanner.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
-            System.out.println("could not find specified file");
+            System.out.println("could not find specified javaio.file");
         } catch (NoSuchElementException e) {
-            System.out.println("no elements to read in file");
+            System.out.println("no elements to read in javaio.file");
         } catch (NumberFormatException nfe) {
             System.out.println("Wrong number format");
         } catch (ArithmeticException ae) {
             System.out.println("division by 0");
         } catch (IOException e) {
-            System.out.println("cannot open the file");
+            System.out.println("cannot open the javaio.file");
         } finally {
             System.out.println("in finally");
         }
@@ -43,9 +43,9 @@ public class Test1 {
     static void createFile() throws IOException {
         File file = new File(CURRENT_DIR,"test.txt");
         if (file.createNewFile()) {
-            System.out.println("file created");
+            System.out.println("javaio.file created");
         } else {
-            System.out.println("file already exists");
+            System.out.println("javaio.file already exists");
         }
     }
 

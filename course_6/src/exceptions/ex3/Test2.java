@@ -37,11 +37,11 @@ public class Test2 {
     static void createFile() throws IOException {
         File file = new File("test.txt");
         if (file.createNewFile()) {
-            System.out.println("file created");
+            System.out.println("javaio.file created");
         } else {
-            System.out.println("file already exists");
+            System.out.println("javaio.file already exists");
         }
-//        throw new IOException("io exception while creating file");
+//        throw new IOException("io exception while creating javaio.file");
     }
 
 

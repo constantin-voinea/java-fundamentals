@@ -22,3 +22,9 @@ b. Creati o clasa client cu metoda main in care sa evidentiati prin teste toate 
     fiecare valoare citita se va afisa si se va adauga apoi la sfarsitul vectorului din care trebuie sa faca parte.
 - sortarea acestor vectori si afisarea lor.
 Tratati toate exceptiile ce pot aparea in folosirea aplicatiei.
+
+3. Scrieţi o metodă (scurtă) care să genereze OutOfMemoryError şi o alta care să genereze StackOverflowError.
+Verificaţi posibilitatea de a continua rularea după interceptarea acestei erori. Comparaţi răspunsul cu posibilitatea de a realiza acelaşi lucru
+într-un limbaj compilat, ce rulează direct pe platforma gazdă (ca C).
+
+4. Demonstraţi într-un program execuţia blocului finally chiar şi în cazul unui return din metoda.
