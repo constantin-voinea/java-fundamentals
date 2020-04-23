@@ -18,12 +18,16 @@ public class Ex1 {
 		list.add("cde");
 		list.add("ee");
 
+		for (String s : list){
+			System.out.println(s);
+		}
+
 		Iterator<String> iterator = list.iterator();
 		while (iterator.hasNext()) {
 			System.out.println(iterator.next());
 		}
 
-		// enhanced for has a fail-fast iterator
+//		 enhanced for has a fail-fast iterator
 //		for (String s : list) { // throws ConcurrentModificationException
 //			if (s.length() % 2 == 0) {
 //				list.remove(s);
