@@ -1,9 +1,8 @@
 package terminalops;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.IntSummaryStatistics;
-import java.util.List;
+import java.util.*;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -15,7 +14,7 @@ public class Ex2 {
     public static void main(String[] args) {
 
         // min, max
-        List<String> strings = Arrays.asList("aaa", "aabb", "aaabbc", "aaaabbccd", "abc", "def");
+        List<String> strings = Arrays.asList("aaa", "aaa", "aabb", "aaabbc", "aaaabbccd", "abc", "def", "def");
         strings.stream()
                 .min(Comparator.comparingInt(String::length))
                 .ifPresent(System.out::println);
@@ -37,9 +36,11 @@ public class Ex2 {
         IntStream i1 = IntStream.rangeClosed(1, 100);
         System.out.println(i1.reduce(0, Integer::sum));
         // same thing, but using sum() terminal method on primitive streams
-        System.out.println(i1.sum());
+        IntStream i2 = IntStream.rangeClosed(1, 100);
+        System.out.println(i2.sum());
         // a summary statistics object has multiple useful methods
-        IntSummaryStatistics iss = i1.summaryStatistics();
+        IntStream i3 = IntStream.rangeClosed(1, 100);
+        IntSummaryStatistics iss = i3.summaryStatistics();
         System.out.println(iss.getSum());
         System.out.println(iss.getAverage());
     }

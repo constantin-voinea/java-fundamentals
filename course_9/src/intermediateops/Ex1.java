@@ -47,12 +47,12 @@ public class Ex1 {
                 .count();
         // peek - designed for debugging; do not use to modify the stream
         System.out.println("peek method");
-        ints.stream()
-                .distinct()
+        ints.stream() // initial values: 1, 1, 9, 9, 2, 2, 2, 8, 8, 4, 5, 5
+                .distinct() // 1, 9, 2, 8, 4, 5
                 .peek(i -> System.out.println("distinct value " + i + " "))
-                .sorted()
+                .sorted() // 1, 2, 4, 5, 8, 9
                 .peek(i -> System.out.println("sorted value " + i + " "))
-                .filter(i -> i % 2 == 0)
+                .filter(i -> i % 2 == 0) // 2, 4, 8
                 .forEach(System.out::println);
     }
 }

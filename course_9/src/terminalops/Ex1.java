@@ -33,7 +33,7 @@ public class Ex1 {
                 .ifPresent(System.out::println); // aaa
         strings.stream()
                 .findAny()
-                .ifPresent(System.out::println); // no guarantee which element is returned
+                .ifPresent(System.out::println); // aaa
 
 
     }
