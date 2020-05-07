@@ -24,14 +24,14 @@ public class Ex2 {
 
         //reduce
         strings.stream()
-                .reduce(String::concat) // returns an optional
+                .reduce(String::concat) // returns an optional; (a, b) -> a.concat(b)
                 .ifPresent(System.out::println);
         String concat = strings.stream()
                 .reduce("prefix: ", String::concat); // always returns the value provided as identity
         System.out.println(concat);
 
         System.out.println(Stream.of(1, 3, 5, 7, 8, 9, 33, 44)
-                .reduce(0, Integer::sum));
+                .reduce(0, Integer::sum)); //(x, y) -> x + y
         // sum performed with int stream
         IntStream i1 = IntStream.rangeClosed(1, 100);
         System.out.println(i1.reduce(0, Integer::sum));

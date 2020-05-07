@@ -13,7 +13,7 @@ public class Ex1 {
 
         List<String> strings = Arrays.asList("aaa", "aabb", "aaabbc", "aaabbccd", "abc", "def");
         long count = strings.stream()
-                .map(s -> s.substring(2))
+                .map(s -> s.substring(2)) // a, bb, abbc,
                 .filter(s -> s.length() >= 3)
                 .count();
         System.out.println(count); // 2

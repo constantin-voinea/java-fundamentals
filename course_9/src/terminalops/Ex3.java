@@ -23,7 +23,7 @@ public class Ex3 {
         Set<String> set = strings.stream().sorted().collect(Collectors.toSet());
         // collect to map
         Map<String, Integer> result = strings.stream()
-                .collect(Collectors.toMap(Function.identity(), String::length, (key, duplicateKey) -> key));
+                .collect(Collectors.toMap(Function.identity(), String::length, (key, duplicateKey) -> key)); // s->s
         System.out.println(result);
 
         // for strings can use joining()

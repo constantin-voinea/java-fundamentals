@@ -9,11 +9,11 @@ Pentru informații suplimentare: constantin.voinea@endava.com
 
 Etapa I:
 1. Definirea sistemului:
-a. sa se creeze o lista pe baza temei alese cu cel puțin 10 acțiuni/interogări care
+resource. sa se creeze o lista pe baza temei alese cu cel puțin 10 acțiuni/interogări care
 se pot face în cadrul sistemului și o lista cu cel puțin 8 tipuri de obiecte.
 2. Implementare: sa se implementeze în limbajul Java o aplicație pe baza celor definite
 la punctul 1. Aplicația va conține:
-a. clase simple cu atribute private / protected și metode de acces
+resource. clase simple cu atribute private / protected și metode de acces
 b. cel puțin 2 colecții diferite capabile să gestioneze obiectele definite anterior (List,
 Set, Map, etc.) dintre care cel puțin una sa fie sortata – se vor folosi array-uri uni-
 /bidimensionale in cazul in care nu se parcurg colectiile pana la data checkpoint-ului.
@@ -24,7 +24,7 @@ e. o clasa main din care sunt făcute apeluri către servicii
 
 Etapa II:
 1. Extindeți proiectul din prima etapa prin realizarea persistentei utilizând fișiere:
-a. se vor realiza fișiere de tip CSV (fiecare coloana din fisier este separata de virgula, 
+resource. se vor realiza fișiere de tip CSV (fiecare coloana din fisier este separata de virgula,
 ex: nume,prenume,varsta) pentru cel puțin 4 dintre clasele definite in prima etapa.
 b. se vor realiza servicii singleton generice pentru scrierea și citirea din fișiere.
 c. la pornirea programului se vor încărca datele din fișiere utilizând serviciile create.
@@ -34,7 +34,7 @@ este executata una dintre acțiunile descrise in prima etapa. Structura fișieru
 nume_actiune, timestamp
 
 Etapa III:
-1. Înlocuiți serviciile realizate în etapa a II-a cu servicii care sa asigure persistenta
+1. Înlocuiți serviciile realizate în etapa resource II-resource cu servicii care sa asigure persistenta
 utilizând baza de date folosind JDBC.
 - sa se realizeze servicii care sa expună operații de tip create, read, update, delete
 pentru cel puțin 4 dintre clasele definite
@@ -43,7 +43,7 @@ definite inițial. Interfața va avea cel puțin 2 ecrane diferite care sa permi
 ele. Se va utiliza Swing sau JSP pentru realizarea interfeței grafice. Se pot utiliza si alte
 framework-uri, dar ar trebui discutate inainte, la curs/laborator.
 - se va adăuga în fișierul exportat de serviciul de audit încă o coloana: thread_name,
-reprezentand numele thread-ului care a apelat metoda.
+reprezentand numele thread-ului care resource apelat metoda.
 
 
 Teme sugerate:
