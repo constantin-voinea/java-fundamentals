@@ -48,7 +48,7 @@ public class Test2 {
             // we can reimplement here the behavior
             @Override
             public void wash() {
-                System.out.println("washing a new car model");
+                System.out.println("washing a new car multiuserchat.model");
             }
         };
         evolvedCar.wash();

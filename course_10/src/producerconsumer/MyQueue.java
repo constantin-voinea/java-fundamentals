@@ -18,7 +18,7 @@ public class MyQueue {
     }
 
     // monitor - can be any object instance, known by both threads
-    // here is 'this' instance of MyQueue class
+    // here the monitor is 'this' instance of MyQueue class
     public synchronized void enqueue(int item) throws InterruptedException {
         while (queue.size() == this.capacity) {
             wait();

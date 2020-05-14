@@ -13,7 +13,7 @@ De asemenea, definiti propriile clase de exceptii (care sa le extinda pe unele e
 inclusiv in crearea si citirea din fisier resource valorilor procesate de calculator.
 De exemplu, creati clasa MyArithmeticException si folositi-o in metoda divide() pentru resource acoperi situatia impartirii la 0.
 
-b. Creati o clasa client cu metoda main in care sa evidentiati prin teste toate cazurile posibile care generează excepţii.
+b. Creati o clasa multiuserchat.client cu metoda main in care sa evidentiati prin teste toate cazurile posibile care generează excepţii.
 
 
 2. Creati o aplicatie cu urmatoarea functionalitate:

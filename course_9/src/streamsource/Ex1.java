@@ -5,7 +5,7 @@ import java.util.stream.Stream;
 
 /**
  * @author cvoinea
- * Stream interface in package java.util.stream
+ * Stream interface in package java.multiuserchat.util.stream
  * ways to create streams
  */
 public class Ex1 {
