@@ -1,0 +1,71 @@
+
+ JSP --> dynamic templating language
+* it provides markup for generating dynamic web pages
+* mix html tags with java code
+* <%= ...[java code that must have a result] %> expression tag
+* jsp have access to objects in Servlet API --> jsp implicit objects
+        - out --> JspWriter
+        - request --> HttpServletRequest
+        - response --> HttpServletResponse
+        - config --> ServletConfig
+        - application --> ServletContext
+        - session --> HttpSession
+        - pageContext --> PageContext
+        - page --> object
+        - exception --> Throwable
+* Jasper is a built-in servlet (like a default servlet)
+    - it compiles jsp into servlet sourcecode, then bytecode
+* jsp pages don't need to be recompiled every time they are used
+
+* jsp expression language --> ${}
+* EL implicit map objects - param --> pageScope
+                          - paramValues --> requestScope
+                          - header --> sessionScope
+                          - headerValues --> applicationScope
+                          - cookie
+                          - pageContext
+                          - initParam
+                          - exception
+
+* JSP scriptlets allow multiple java lines of code instead a single one, when using JSP expressions
+* JSP declarations --> declare a method between <%! %>, then call it somewhere else in JSP: <%= methodName() %>
+* Java beans --> used for separating Java code from JSP entirely
+    - basic rules for defining them:
+        - must have a no-args constructor
+        - may have state in the form of properties
+        - properties accessed via getters and setters
+        - non-properties methods are allowed
+        - properties must be discoverable using reflection
+        - a bean's properties must be serializable
+        - can support a specific event API as a publisher or listener
+
+* JSTL  - JSP standard tag libraries --> suite of JSP extensions that provides tags and functions
+        - JSTL Core --> control and flow
+        - JSTL formatting --> date/number formatting and i18n
+        - JSTL functions --> EL utility functions
+        - JSTL xml --> parsing xml
+        - JSTL sql --> executing sql
+* JSTL not provided by Tomcat out-of-the-box
+* JSTL Core Library:
+    - flow tags:
+        - <c:if>
+        - <c:otherwise>
+        - <c:choose>
+        - <c:catch>
+    - looping tags:
+        - <c:forEach>
+        - <c:forTokens>
+        - <c:when>
+    - other useful tags:
+        - <c:import>
+        - <c:redirect>
+        - <c:remove>
+        - <c:set>
+        - <c:url>
+        - <c:out>
+        - <c:param>
+* JSTL Functions Library: contains(), containsIgnoreCase(), endsWith(), indexOf(), length(), startsWith(), endsWith(),
+        substring(), substringAfter(), substringBefore(), replace(), trim(), split(), toUpperCase(), toLowerCase() etc
+* JSTL Formatting: <fmt:formatDate>, <fmt:formatNumber>, <fmt:timeZone>, <fmt:parseDate>, <fmt:parseNumber>, <fmt:setTimeZone>
+                   <fmt:requestEncoding>, <fmt:bundle>, <fmt:setBundle>, <fmt:setLocale>, <fmt:message>
+*

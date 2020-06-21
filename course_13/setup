@@ -1,0 +1,44 @@
+
+  Setup Tomcat on Windows 10:
+ *  - download Tomcat from https://tomcat.apache.org/download-90.cgi (Core - 64-bit Windows zip)
+ *      - after download, extract the files within archive to o desired workplace
+ *  - configure environment variables (JAVA_HOME, CATALINA_HOME, path)
+ *      - type sysdm.cpl in search toolbar, then in System Properties window go to Advanced tab
+ *      - click Environment Variables button at the bottom
+ *      - in System variables section, check JAVA_HOME variable exists and is set to your jdk installation folder
+ *      - click New and add CATALINA_HOME in Variable name field, Tomcat folder path in Variable value
+ *      - select Path variable, then click edit
+ *          - click New and add %JAVA_HOME%\bin for Java binaries
+ *          - click New and add %CATALINA_HOME%
+ *  - start Tomcat
+ *      - type cmd in search toolbar to open a Command Prompt
+ *      - change directory to your Tomcat folder\bin, then type "startup.bat" or "catalina.bat start" to start Tomcat
+ *      (e.g., C:\Program Files\apache-tomcat-9.0.14\bin)
+ *  - test Tomcat using a browser
+ *      - open a tab in a browser and go to localhost:8080 to check if Tomcat is properly installed and running
+ *  - shutdown Tomcat -> type "shutdown.bat" or "catalina.bat stop" in the same location in cmd
+
+
+  Setup a new project (example using IntelliJ IDEA)
+* File --> New --> Project --> select plain Java project from left column and the preferred SDK
+* hit Next 2 times, provide a project name and Finish
+* download javax.servlet-api from https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api/4.0.1
+   (in Files section click on 'jar' to save the jar locally)
+* download jstl-1.2 from https://mvnrepository.com/artifact/javax.servlet.jsp.jstl/jstl-api/1.2
+   (in Files section click on 'jar' to save the jar locally)
+* add these dependencies to your project:
+    - go to File --> Project Structure --> Project Settings (left-hand side) --> Libraries
+    - click on "+" sign, select Java, then browse to the location where you previously downloaded the two artifacts
+    - select both artifacts (javax.servlet-api-4.0.1.jar and jstl-1.2.jar), then select your module --> OK --> OK
+    - if everything went well, the two jars should be now visible under External Libraries (in your project structure)
+* add Tomcat to your project configuration:
+    - go to Run menu --> Edit Configurations, click "+" sign on top-left side and select Tomcat Server - Local
+    - in current tab (Server) you can set a name for this configuration, you can edit the URL (add a base path, for example), change Tomcat default port etc.
+    - move to the next tab, Deployment, click "+" sign, select Artifacts, then double-click on available elements in the right-side pane
+    - pay attention to the name of this artifact (you can set it here) --> it will be the base path for your application
+    - click ok to finish the configuration, which should be now be available in the drop-down menu, right after "Build" icon
+* you can now start developing your application and run it using the configuration previously created.
+
+!NB: if the server URL defined in your configuration is http://localhost:8080, then to reach a path "/hello" defined in a servlet, for example,
+      you must append the base path (your artifact name defined above, e.g.--> test) and the required path:
+  * in the end, it should look like this:  http://localhost:8080/test/hello

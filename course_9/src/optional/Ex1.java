@@ -22,7 +22,7 @@ public class Ex1 {
         // of()
         Optional<String> o1 = Optional.of("abcabc");
         System.out.println(o1.isPresent()); //true
-        System.out.println(o1.isEmpty()); // starting with Java 11, opposite of isPresent()
+//        System.out.println(o1.isEmpty()); // starting with Java 11, opposite of isPresent()
         System.out.println(o1); //Optional[abcabc]
         // throws NPE if null is provided as argument
 //        System.out.println(Optional.of(null));

@@ -1,0 +1,22 @@
+
+    Servlet filters and listeners
+* servlets and JSPs are a combination of presentation and controller models
+* filters and listeners are utilities for enhancing the performance of servlets and JSP pages, observing and monitoring their execution
+* filters are interceptors - introduce qualities of service
+                         - modify the behavior
+* listeners are observers - do not modify behavior
+                          - react to lifecycle and state changes
+                          - used to monitor and observe
+
+    Servlet Filters - standard part of java web apps
+* supported by all servlet engines
+* custom class extending HttpFilter, implementing doFilter()
+* filter types examples: authentication, data compression, logging, tokenizing, encryption, validation
+* when Catalina delegates request to a servlet, filters are called first, in the order they've been declared
+* after the servlet finishes the execution, filters are called again in reverse order
+
+    Events and listeners
+* lifecycle listeners: ServletContextListener, HttpSessionListener, HttpSessionActivationListener, ServletRequestListener, AsyncListener
+* state change listeners: ServletContextAttributeListener, HttpSessionAttributeListener, HttpSessionIdListener, HttpSessionBindingListener,
+                        ServletRequestAttributeListener
+

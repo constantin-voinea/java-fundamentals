@@ -1,0 +1,84 @@
+
+ HTTP 1.1 --> application network protocol used by clients (browsers) to communicate with a web server
+* the sole purpose of a web server is to handle http requests and generate http responses
+* when the client (browser) requests a webpage, it first creates a TCP/IP network connection to the web server
+* then it sends a http request over the TCP/IP connection to the web server, which finds a resource
+or does some processing and returns a http response over TCP/IP (then the socket is disconnected)
+* http uses plain text or UTF-8 and has a specific format for request and response
+* http request has 3 basic parts:
+    - internet web address and requested method: e.g., GET /example/ HTTP 1.1
+    - metadata, in the form of headers: e.g., Host: localhost:8080
+                                              User-Agent: Mozilla/5.0
+                                              Accept: */*  (data type accepted, e.g., text/html)
+    - body
+* http response: - version of HTTP used and response code
+                 - headers (vary upon the response code, content type, web server used, OS)
+                        - Content-Type: based on media types (or standardized MIME types: https://www.iana.org/assignments/media-types/media-types.xhtml)
+                 - http body
+* response code categories: - 100 - 199: informational responses
+                            - 200 - 299: successful responses
+                            - 300 - 399: redirects
+                            - 400 - 499: client errors
+                            - 500 - 599: server errors
+* cURL --> command line tool and library for transferring data with URLs
+* http methods: GET (request a resource), POST (send data to server), PUT, DELETE etc.
+* HTTP 1.1 protocol is the foundation of both web and web server applications
+
+
+ Tomcat architecture:
+* Coyote - connector component that listens for connection requests and establishes TCP/IP network connections
+         - it examines the protocol and passes the request to Catalina
+* Catalina - servlet engine that parses the http requests, looks at the path and resources requested and fetches a
+            servlet from webapps directory
+           - it delegates the processing to that servlet
+           - the same servlet can handle multiple requests from multiple web clients
+           - it takes the information returned by the servlet, converts it to a http response and sends it to Coyote,
+           which forwards it to the web client
+* Jasper - compiler component used when the web app is a jsp instead of a servlet
+         - converts a jsp page into a custom servlet bytecode
+         - sends the compiled servlet to Catalina
+
+ Servlet lifecycle:
+* Catalina: new Servlet() --> init(ServletConfig) --> on Servlet: call init() --> here the servlet instance is ready to handle requests
+* Catalina: initiates destroy() --> destroy() called on servlet instance
+
+ HttpServletRequest methods to get additional info:
+ * from path and method:
+        - getMethod()
+        - getContextPath()
+        - getProtocol()
+        - getParameter()
+ * from header:
+        - getServerName()
+        - getServerPort()
+        - getCookies()
+        - getHeaderName()
+ * from body:
+        - getInputStream()
+        - getParts()
+ * from web server:
+        - getServerInfo()
+        - getSession()
+        - getServletContext()
+
+  HttpServletResponse:
+* protocol and response code:
+        - setStatus() -> for response code
+* header:
+        - addIntHeader()
+        - addHeader()
+        - setContentType()
+        - setLocale()
+        - addCookie()
+* body:
+        - setCharacterEncoding()
+        - getWriter()
+        - setBufferSize()
+
+ * ServletContext --> interface between servlet and servlet container (Catalina)
+ * HttpSessions object --> provides access to environment variables and info associated with communication between a specific client and a web app
+ * Session tracking solutions - cookies
+                              - hidden form files
+                              - URL rewriting
+    - call invalidate() on a user session to end it (after user logs off)
+    - session timeout mechanism - Tomcat configured for 30' (can be changed via web.xml or annotation)

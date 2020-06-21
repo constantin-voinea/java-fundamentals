@@ -1,0 +1,13 @@
+
+    Package and deploy a WAR
+* web apps packaged in a war file (web archive)
+* war file --> zip file with a specific directory structure
+* it contains servlets, JSPs, filters, listeners and static content (html, css, png, js)
+* root dir
+   -- WEB-INF
+       -- web.xml --> configs in this file take precedence over annotations
+       -- lib (libraries)
+       -- classes
+          - compiled servlet classes in their corresponding package
+   -- META-INF (automatically generated)
+       -- context.xml --> used by Tomcat to map a reference to a resource
